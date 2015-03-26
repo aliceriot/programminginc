@@ -16,9 +16,9 @@ main()
         printf("%3d %6.1f\n", fahr, convert(fahr));
 }
 
+// the function can be quite minimal
 float convert(int fahr)
 {
-    float celc = (5.0/9.0) * (fahr - 32);
-    return celc;
+    return (5.0/9.0) * (fahr - 32);
 }
 
