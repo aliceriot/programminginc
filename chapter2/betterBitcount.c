@@ -4,9 +4,13 @@ int bitcount(unsigned x);
 
 main()
 {
-    unsigned x = 144;
+    unsigned i;
 
-    printf("%d is the number of 1 bits in %d\n", bitcount(x), x);
+    for (i = 0; i <= 21474836; i++) {
+        bitcount(i);
+    }
+
+    printf("%d is the number of bits in %d\n",bitcount(i), i);
 }
 
 int bitcount(unsigned x)
@@ -25,3 +29,11 @@ int bitcount(unsigned x)
 // betterBitcount: 0.001 total
 // bitcount: 0.002 total
 // so probably not haha
+//
+// I rewrote it to do a loop and ask about a ton of different integer values, and now
+// it takes quite a long time to run.
+//
+// betterBitcount: 0.88s, 0.880 total
+// bitcount: 2.28s, 2.282 total
+//
+// so the better algorithm is over twice as fast! Nice!

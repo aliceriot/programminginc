@@ -4,9 +4,13 @@ int bitcount(unsigned x); // counts the number of bits set to '1' in the argumen
 
 main()
 {
-    unsigned x = 144;
+    unsigned i;
 
-    printf("%d is the number of bits in %d\n",bitcount(x), x);
+    for (i = 0; i <= 21474836; i++) {
+        bitcount(i);
+    }
+
+    printf("%d is the number of bits in %d\n",bitcount(i), i);
 }
 
 int bitcount(unsigned x)
