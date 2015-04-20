@@ -28,11 +28,19 @@ int stringeq(char s1[], char s2[])
     int i;
 
     for (i = 0; i < strlen(s1); i++) {
-        if (s1[i] == s2[i])
-            break;
-        else if (s1[i] == '\0') {
+        if (s1[i] != s2[i])
             return 0;
         }
-    }
     return 1;
 }
+
+int stringAppend(char s[], char insert[], int pos)
+{
+    int i;
+
+    for (i = 0; insert[i] != '\0'; i++)
+        s[i+pos] = insert[i];
+    return i-1;
+}
+
+
