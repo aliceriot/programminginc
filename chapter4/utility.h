@@ -1,3 +1,5 @@
+#include <string.h>
+
 int mygetline(char s[], int lim) // this was slightly changed for ch 4
 {
     int c,i;
