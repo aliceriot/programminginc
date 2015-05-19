@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <ctype.h>
+#include <math.h>
 
 #define MAXOP   100
 #define NUMBER  '0'
@@ -25,9 +26,6 @@ main()
         switch (type) {
             case NUMBER:
                 push(atof(s));
-                printTwo();
-                stackSwap();
-                printTwo();
                 break;
             case '+':
                 push(pop() + pop());
@@ -49,6 +47,16 @@ main()
             case '%': // exercise 4-3
                 op2 = pop();
                 push((int)pop() % (int)op2);
+                break;
+            case 's':
+                push(sin(pop()));
+                break;
+            case 'e':
+                push(exp(pop()));
+                break;
+            case '^':
+                op2 = pop();
+                push(pow(op2,pop()));
                 break;
             case '\n':
                 printf("\t%.8g\n", pop());
@@ -162,24 +170,3 @@ void ungetch(int c)
     else
         buf[bufp++] = c;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
