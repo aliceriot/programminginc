@@ -20,6 +20,7 @@ main()
 
     while ((len = mygetline(hex, MAXLINE)) > 0) {
         printf("%s in decimal is %d\n!",hex,htoi(hex,len));
+        printf("len is %d\n", len);
     }
 
 }
